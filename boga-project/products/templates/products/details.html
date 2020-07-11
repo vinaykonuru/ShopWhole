@@ -6,8 +6,18 @@
   <div class="row pt-3">
     <div class="col-2">
     </div>
-    <div class="col-10">
+    <div class="col-2">
       <h1>{{ product.title }}</h1>
+    </div>
+    <div class="col-2">
+      {% if product.timerOver %}
+      <div class="container">
+        <h1>TIME OVER!</h1>
+      </div>
+      {% else %}
+      {{product.timeRemainingPretty}}
+      {% endif %}
+
     </div>
   </div>
 

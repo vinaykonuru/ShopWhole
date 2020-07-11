@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from datetime import datetime
+from django.utils import timezone
+
 # Create your models here.
 class Product(models.Model):
     title=models.CharField(max_length=100)
@@ -14,11 +16,11 @@ class Product(models.Model):
 
     def __str__(self):
         return self.title
-    def timeRemaining(self):
-        return self.pub_date-self.closing_time
+    def timerOver(self):
+        if timezone.now()>=self.closing_time:
+            return True
     def timeRemainingPretty(self):
-        td=(self.pub_date-self.closing_time)
-        total_seconds= td.total_seconds
-        hours=int(total_seconds/3600)
-        minutes=int((total_seconds%3600)/60)
-        return hours+":"+minutes
+        td=self.closing_time-timezone.now()
+        minutes, seconds = divmod(td.seconds + td.days * 86400, 60)
+        hours, minutes = divmod(minutes, 60)
+        return '{:d}:{:02d}:{:02d}'.format(hours, minutes, seconds)

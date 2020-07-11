@@ -15,8 +15,9 @@ def detail(request,product_id):
 def order(request,product_id):
     if request.method=='POST':
         product=get_object_or_404(Product,pk=product_id)
-
-        if request.user not in product.customers.all(): #can only order once
+        if product.timerOver():
+            return redirect('home')
+        elif request.user not in product.customers.all(): #can only order once
             product.orders+=1
             product.customers.add(request.user)
             product.save()
@@ -25,4 +26,7 @@ def order(request,product_id):
             return redirect('home')
 def cart(request):
     user_cart=request.user.product_set.all()
-    return render(request, 'products/cart.html',{'cart':user_cart})
+    finalPrice=0
+    for product in user_cart:
+        finalPrice+=product.price
+    return render(request, 'products/cart.html',{'cart':user_cart,'finalPrice':finalPrice})
