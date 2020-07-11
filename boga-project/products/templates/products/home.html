@@ -10,5 +10,26 @@
   <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
 </div>
 
+<div class="container">
+  <div class="row">
+      {% for product in products.all %}
+        {% if forloop.counter0|divisibleby:3 %}
+          </div><br> <div class="row">
+      {% endif %}
+        <div class="col-4">
+          <div class="card text-white bg-success mb-3" style="width: 18rem;">
+            <img class="card-img-top" src="{{product.image.url}}" alt="{{product.title}}" width=500 height=300>
+            <div class="card-body">
+              <h5 class="card-title">{{product.title}}</h5>
+              <p class="card-text">${{product.price}}</p>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+
+        </div>
+</div>
+
+
 
 {% endblock %}
