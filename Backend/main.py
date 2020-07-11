@@ -263,7 +263,7 @@ def main():
   #reg[1] = (n-1) * reg[1] / n + treg[1] / n
   #print(storereg[53])
   #visual(storereg)
-  profitvisual(profits)
+  #profitvisual(profits)
   return 0
 
 main()
