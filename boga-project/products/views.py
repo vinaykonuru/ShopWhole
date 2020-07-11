@@ -9,12 +9,20 @@ def home(request):
 
 def detail(request,product_id):
     product=get_object_or_404(Product,pk=product_id)
-    return render(request,'products/detail.html',{'product':product})
+    return render(request,'products/details.html',{'product':product})
 
 @login_required(login_url='/accounts/signup')
-def upvote(request,product_id):
+def order(request,product_id):
     if request.method=='POST':
         product=get_object_or_404(Product,pk=product_id)
-        product.votes_total+=1
-        product.save()
-        return redirect('/products/'+str(product_id))
+
+        if request.user not in product.customers.all(): #can only order once
+            product.orders+=1
+            product.customers.add(request.user)
+            product.save()
+            return redirect('home')
+        else:
+            return redirect('home')
+def cart(request):
+    user_cart=request.user.product_set.all()
+    return render(request, 'products/cart.html',{'cart':user_cart})

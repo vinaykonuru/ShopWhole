@@ -17,13 +17,24 @@
           </div><br> <div class="row">
       {% endif %}
         <div class="col-4">
+          <div onclick="window.location='{% url 'detail' product.id %}';" style="cursor:pointer">
           <div class="card text-white bg-success mb-3" style="width: 18rem;">
             <img class="card-img-top" src="{{product.image.url}}" alt="{{product.title}}" width=500 height=300>
             <div class="card-body">
               <h5 class="card-title">{{product.title}}</h5>
               <p class="card-text">${{product.price}}</p>
+              <p>Time Remaining: {{product.timeRemaining}}</p>
             </div>
           </div>
+        </div>
+          <a href="javascript:{document.getElementById('order{{product.id}}').submit()}">
+            <button class='button btn-primary btn-large btn-block'>Order</button>
+          </a>
+          <p>Current Orders: {{product.orders}}</p>
+          <form id="order{{product.id}}" action="{% url 'order' product.id %}" method="POST">
+            {% csrf_token %}
+            <input type="hidden">
+          </form>
         </div>
       {% endfor %}
 

@@ -51,17 +51,27 @@
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
         <a class="navbar-brand" href="{% url 'home' %}">
-          <img src="{% static 'icon.png' %}" class="d-inline-block align-top" height=30>
-          BOGA
+          <img src="{% static 'shopwhole-transparent.png' %}" class="d-inline-block align-top" height=80>
+          Shop Whole
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ml-auto">
-
+            {% if user.is_authenticated %}
+            <a class="nav-item nav-link" href="{% url 'cart' %}">
+              <span class="iconic iconic-arrow-thick-right-line" title="arrow thick right line" aria-hidden="true">Shopping List</span>
+            </a>
+            <a class="nav-item nav-link" href="javascript:{document.getElementById('logout').submit()}" onClick="">Log Out</a>
+            <form id="logout" action="{% url 'logout' %}" method="POST">
+              {% csrf_token %}
+              <input type="hidden"/>
+            </form>
+           {% else %}
            <a class="nav-item nav-link" href="{% url 'signup' %}">Sign Up</a>
            <a class="nav-item nav-link" href="{% url 'login' %}">Log In</a>
+          {% endif %}
          </div>
        </div>
       </div>
