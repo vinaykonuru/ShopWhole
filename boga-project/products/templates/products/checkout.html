@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{%block content%}
+<div class="text-center">
+  <h1>CHECKOUT</h1>
+</div>
+<div class="container">
+  <form action="{% url 'home' %}">
+    Credit Card Information:
+    <br>
+    <br>
+    Credit Card Number:
+    <input type="text" name="creditcardnumber">
+    CVC
+    <input type="text" name="creditcardcvc">
+    <br>
+    <br>
+    Credit Card Expiration Date:
+    <input type="date" name="creditcardexpirationdate">
+    <br>
+    <br>
+
+    Total Cost: ${{totalCost}}
+    <br>
+    <br>
+    Tax: ${{tax}}
+    <br>
+    <br>
+    Final Cost: ${{finalCost}}
+    <br>
+    <br>
+    <input class="btn btn-primary" type="submit" value="Purchase">
+  </form>
+
+</div>
+
+{%endblock%}
