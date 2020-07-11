@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<div class="container">
+
+  <div class="text-center">
+    <head>
+      <h1 style="font-size:100px">ABOUT SHOPWHOLE</h1>
+    </head>
+  <h1>The Concept</h1>
+  </div>
+  <p>We at ShopWhole aim to give college students a way to utilize the power of
+  wholesale to save money on their everyday purchases. By analyzing the buying patterns of several goods on
+  various college campuses, ShopWhole estimates the size of the bulk order it will need to purchase. When ShopWhole
+  overestimates the demand, customers will actually get a price lower than possible with wholesale. When ShopWhole underestimates demand,
+  customers will get a price slightly higher than wholesale. Either way, customers will be getting prices drastically
+  lower than at any other store. The more purchase cycles we go through, the more data ShopWhole has to optimize the accuracy of
+  its predictions, and the more money all of our customers will consistently save! </p>
+
+  <hr>
+  <div class="text-center">
+  <h1>The Math</h1>
+  </div>
+  <div class="text-center">
+    <figure>
+      <img src="{% static 'visualization.gif' %}">
+      <figcaption style="font-size:15px">After multiple iterations, we observe that the regression line approaches
+        the true relationship between purchase quantity and price point. </figcaption>
+    </figure>
+  </div>
+  <p>Our algorithm analyzes student consumption patterns and how the price level relates
+     to the number of purchases made by ShopWhole users. With each order placed, our algorithm
+     updates itself to more accurately represent student purchasing patterns. </p>
+  <div class="text-center">
+    <img src="{% static 'profitoptimization.png' %}">
+  </div>
+  <br>
+<p>Once we are able to accurately predict consumer behavior,
+  we calculate the optimal listing price for the product and the profit for the entire bulk order.
+  As the listing price is repeatedly optimized with increased understanding of student purchasing habits,
+  our profits show a clear, increasing trend. </p>
+  <hr>
+  <div class="text-center">
+    <h1>The Business Model</h1>
+  </div>
+    <p>ShopWhole is able to make profit through the increasing the accuracy of our predictions. We will sell
+    at prices just above our estimated wholesale price. This price will continue to decrease as the number of students
+    ordering goods increases. In short, the more users we have, the more accurate our predictions become, and the
+    more we can profit the customer, the wholesaler, and ShopWhole.</p>
+<br>
+<br>
+<br>
+
+</div>
+
+
+{% endblock %}

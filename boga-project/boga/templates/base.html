@@ -60,6 +60,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ml-auto">
+            <a class="nav-item nav-link" href="{% url 'about' %}">About</a>
             {% if user.is_authenticated %}
             <a class="nav-item nav-link" href="{% url 'cart' %}">
               <span class="iconic iconic-arrow-thick-right-line" title="arrow thick right line" aria-hidden="true">Shopping List</span>
