@@ -11,17 +11,26 @@
         <th>Description</th>
         <th>Price</th>
       </tr>
-    {% for item in cart %}
+    {% for product in cart %}
     <tr>
-      <td>{{item.title}}</td>
-      <td>{{item.body}}</td>
-      <td>{{item.price}}</td>
+      <td>{{product.title}}</td>
+      <td>{{product.body}}</td>
+      <td>{{product.price}}</td>
+      <td><a href="javascript:{document.getElementById('remove').submit()}"}>
+          <button type="button">X</button>
+          </a>
+        <form id="remove" action="{% url 'removeItem' product.id %}" method="POST">
+          {% csrf_token %}
+          <input type="hidden"/>
+        </form>
+      </td>
     </tr>
     {% endfor %}
     </table>
-    Final Price: {{finalPrice}}
+    <br>
+    Final Price: ${{finalPrice}}
+    <a href="{% url 'checkout' %}"><button class='btn btn-primary btn-large btn-block'>Checkout</button></a>
   </div>
-
 
 </div>
 

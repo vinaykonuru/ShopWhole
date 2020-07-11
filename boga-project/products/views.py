@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect,get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import Product
 from django.utils import timezone
+from decimal import *
 # Create your views here.
 def home(request):
     products=Product.objects
@@ -30,3 +31,17 @@ def cart(request):
     for product in user_cart:
         finalPrice+=product.price
     return render(request, 'products/cart.html',{'cart':user_cart,'finalPrice':finalPrice})
+def removeItem(request,product_id):
+    if request.method=='POST':
+        product=Product.objects.get(id=product_id)
+        product.customers.remove(request.user)
+        product.orders-=1
+        return redirect('cart')
+def checkout(request):
+    user_cart=request.user.product_set.all()
+    totalCost=0
+    for product in user_cart:
+        totalCost+=product.price
+    tax=totalCost*Decimal('0.07')
+    finalCost=totalCost+tax
+    return render(request,'products/checkout.html',{'finalCost':round(finalCost,2),'tax':round(tax,2),'totalCost':round(totalCost,2)})

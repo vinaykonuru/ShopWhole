@@ -27,14 +27,14 @@
               <h1>TIMER OVER</h1>
               {% else %}
               <p>Time Remaining: {{product.timeRemainingPretty}}</p>
+              <a href="javascript:{document.getElementById('order{{product.id}}').submit()}">
+                <button class='btn btn-primary btn-large btn-block'>Order</button>
+              </a>
               {% endif %}
             </div>
           </div>
         </div>
-          <a href="javascript:{document.getElementById('order{{product.id}}').submit()}">
-            <button class='button btn-primary btn-large btn-block'>Order</button>
-          </a>
-          <p>Current Orders: {{product.orders}}</p>
+          <p>Orders: {{product.orders}}</p>
           <form id="order{{product.id}}" action="{% url 'order' product.id %}" method="POST">
             {% csrf_token %}
             <input type="hidden">
