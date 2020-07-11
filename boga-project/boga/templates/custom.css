@@ -1,0 +1,9 @@
+\* a.navbar-brand {
+    vertical-align: middle;
+    color: blue;
+}
+*\
+body {
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(245,51,113,1) 100%);
+}
