@@ -47,12 +47,12 @@
 
     <link rel="stylesheet" href="custom.css">
 </head>
-  <body style="background: rgb(255,255,255); background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,222,232,1) 100%); ">
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
+  <body>
+    <header >
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+        <div class="container" >
         <a class="navbar-brand" href="{% url 'home' %}">
-          <img src="{% static 'shopwhole-transparent.png' %}" class="d-inline-block align-top" height=80>
+          <img src="{% static 'shopwholeWhite.png' %}" class="d-inline-block align-top" height=80>
           <p style="vertical-align:middle;">ShopWhole</p>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -81,12 +81,13 @@
 
 
 
-
+<div style="background:#fff6ea; padding: 5px;">
 {% block content %}
 
 {% endblock %}
+</div>
 
-<footer class="text-muted">
+<footer class="text-muted bg-dark">
   <div class="container text-center">
   ©ShopWhole {% now "Y" %}
   </div>
