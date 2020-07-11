@@ -5,9 +5,11 @@ from django.utils import timezone
 from decimal import *
 # Create your views here.
 def home(request):
-    products=Product.objects
-    return render(request,'products/home.html',{'products':products})
-
+    if request.user.is_authenticated:
+        products=Product.objects
+        return render(request,'products/home.html',{'products':products})
+    else:
+        return render(request,'intro.html')
 def detail(request,product_id):
     product=get_object_or_404(Product,pk=product_id)
     return render(request,'products/details.html',{'product':product})
@@ -25,18 +27,24 @@ def order(request,product_id):
             return redirect('home')
         else:
             return redirect('home')
+
+@login_required(login_url='/accounts/signup')
 def cart(request):
     user_cart=request.user.product_set.all()
     finalPrice=0
     for product in user_cart:
         finalPrice+=product.price
     return render(request, 'products/cart.html',{'cart':user_cart,'finalPrice':finalPrice})
+
+@login_required(login_url='/accounts/signup')
 def removeItem(request,product_id):
     if request.method=='POST':
         product=Product.objects.get(id=product_id)
         product.customers.remove(request.user)
         product.orders-=1
         return redirect('cart')
+
+@login_required(login_url='/accounts/signup')
 def checkout(request):
     user_cart=request.user.product_set.all()
     totalCost=0
