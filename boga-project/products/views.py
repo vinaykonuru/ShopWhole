@@ -14,6 +14,9 @@ def detail(request,product_id):
     product=get_object_or_404(Product,pk=product_id)
     return render(request,'products/details.html',{'product':product})
 
+def about(request):
+    return render(request,'about.html')
+
 @login_required(login_url='/accounts/signup')
 def order(request,product_id):
     if request.method=='POST':
