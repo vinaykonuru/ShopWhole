@@ -1,5 +1,32 @@
-from django.shortcuts import render
-
+from django.shortcuts import render,redirect,get_object_or_404
+from django.contrib.auth.decorators import login_required
+from .models import Product
+from django.utils import timezone
 # Create your views here.
 def home(request):
-    return render(request,'products/home.html')
+    products=Product.objects
+    return render(request,'products/home.html',{'products':products})
+
+def detail(request,product_id):
+    product=get_object_or_404(Product,pk=product_id)
+    return render(request,'products/details.html',{'product':product})
+
+@login_required(login_url='/accounts/signup')
+def order(request,product_id):
+    if request.method=='POST':
+        product=get_object_or_404(Product,pk=product_id)
+        if product.timerOver():
+            return redirect('home')
+        elif request.user not in product.customers.all(): #can only order once
+            product.orders+=1
+            product.customers.add(request.user)
+            product.save()
+            return redirect('home')
+        else:
+            return redirect('home')
+def cart(request):
+    user_cart=request.user.product_set.all()
+    finalPrice=0
+    for product in user_cart:
+        finalPrice+=product.price
+    return render(request, 'products/cart.html',{'cart':user_cart,'finalPrice':finalPrice})
