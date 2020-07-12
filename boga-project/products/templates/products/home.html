@@ -19,7 +19,7 @@
       {% endif %}
         <div class="col-4">
           <div onclick="window.location='{% url 'detail' product.id %}';" style="cursor:pointer">
-          <div class="card text-white mb-3" style="border-style:solid; border-width:3px; border-color: #f8709b;  width: 18rem; background-color: #ffffff";>
+          <div class="card text-white mb-3" style="width:18rem; background-color: #f8709b">
             <img class="card-img-top" src="{{product.image.url}}" alt="{{product.title}}" width=500 height=300>
             <div class="card-body">
               <h5 class="card-title">{{product.title}}</h5>
