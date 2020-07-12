@@ -19,10 +19,7 @@ A test of the algorithm is available in Backend and would be actually implemente
 <img align="center" src="https://github.com/adouglas24/ShopWhole/blob/master/boga-project/static/visualization.gif">
 </p>
 
-After multiple iterations, we observe that the regression line approaches the true relationship between purchase quantity and price point.
-
-
-Our algorithm analyzes student consumption patterns and how the price level relates to the number of purchases made by ShopWhole users. With each order placed, our algorithm updates itself to more accurately represent student purchasing patterns.
+After multiple iterations, we observe that the regression line approaches the true relationship between purchase quantity and price point. Our algorithm analyzes student consumption patterns and how the price level relates to the number of purchases made by ShopWhole users. With each order placed, our algorithm updates itself to more accurately represent student purchasing patterns.
 
 <p align="center">
 <img src="https://github.com/adouglas24/ShopWhole/blob/master/boga-project/static/profitoptimization.png">
