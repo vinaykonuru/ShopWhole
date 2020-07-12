@@ -48,31 +48,36 @@
   </head>
   <body class="text-center">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-<div class='wrapping' style="background-color:#fff6ea; min-height: calc( 100vh - 50px );">
-  <header class="masthead mb-auto">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav ml-auto">
-          <a class="nav-item nav-link" href="{% url 'login' %}">Log In</a>
-         </div>
-       </div>
-      </div>
-    </nav>
-  </header>
+        <div class='wrapping' style="background-color:#fff6ea; min-height: calc( 97vh ); margin:0;">
+            <header class="masthead mb-auto">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <div class="container">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                            <div class="navbar-nav ml-auto">
+                                <a class="nav-item nav-link" href="{% url 'login' %}">Log In</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </header>
 
-  <main role="main" class="inner cover" style="background:#fff6ea; padding: 5px;">
-    <h1 class="cover-heading">ShopWhole</h1>
-    <p class="lead">We bring the power of wholesale to the people who need it most.</p>
-    <p class="lead">
-      <a href="{% url 'signup' %}" class="btn btn-lg btn-secondary">Sign Up</a>
-    </p>
-  </main>
-    </div>
-  <footer class="text-muted bg-dark footer fixed-bottom">
+
+            <div class=" sidebyside" style=" height: 250px; margin: 0 15%;">
+
+                <img src="../static/intrologo.png" alt="ShopWhole" style="height:200px; margin:20px; vertical-align:middle;">
+
+            </div>
+            <main role="main" class="inner cover" style="background:#fff6ea; padding: 10px;">
+                <p class="lead">We bring the power of wholesale to the people who need it most.</p>
+                <p class="lead">
+                    <a href="{% url 'signup' %}" class="btn btn-lg btn-secondary">Sign Up</a>
+                </p>
+            </main>
+        </div>
+  <footer class="text-muted bg-dark footer fixed-bottom" style="min-height: calc(3h);">
     <div class="text-center">
 
     </div>
