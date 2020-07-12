@@ -27,7 +27,7 @@ def signup(request):
         else:
             return render(request,'accounts/signup.html',{'error':'Passwords must match'})
     else:
-        return render(request, 'accounts\signup.html')
+        return render(request, 'accounts/signup.html')
 
 def logout(request):
     print('hello1')
