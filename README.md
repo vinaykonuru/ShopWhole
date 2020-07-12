@@ -1,4 +1,7 @@
 # Vandy Hacks Summer Edition 7/10/20-7/12/20: ShopWhole
+
+![picture](https://github.com/adouglas24/ShopWhole/blob/master/boga-project/static/shopwhole-transparent.png)
+
 Website: shopwhole.tech or 192.81.211.69:80
 
 ShopWhole is a digital marketplace that gives individual students the ability to buy their everyday goods at wholesale prices. ShopWhole is distinct from any other wholesale store because customers are not dependent on someone else's purchase to receive a significantly discounted price, there is no requirement for consumers to purchase large orders, and the prices of products on our website are fixed for a given sale. By using an optimization algorithm based on the purchase patterns of various college campuses, ShopWhole can determine the expected number of buyers for various items at varying price levels. More specifically, our algorithm develops predictions for the expected number of products purchased at a given price, compares those values with the wholesale price offers, and then finds the optimal listing price. The algorithm updates with every delivery made, constantly learning more about the students’ purchasing patterns and maximizing the discounts we can offer. Our site acts similarly to insurance, as the consumers are not affected by the somewhat random behavior of other consumers. We assume the risk if not enough people place an order, to ensure that our customers have guaranteed low prices that they can count on. 
@@ -8,7 +11,7 @@ A test of the algorithm is available in Backend and would be actually implemente
 
 
 The Math
-![picture](img/abc.png)
+![picture](https://github.com/adouglas24/ShopWhole/blob/master/boga-project/static/visualization.gif)
 
 
 
