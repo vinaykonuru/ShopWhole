@@ -1,6 +1,7 @@
 # Vandy Hacks Summer Edition 7/10/20-7/12/20: ShopWhole
 
 ![picture](https://github.com/adouglas24/ShopWhole/blob/master/boga-project/static/shopwhole-transparent.png)
+<img align="left" width="100" height="100" src="https://github.com/adouglas24/ShopWhole/blob/master/boga-project/static/shopwhole-transparent.png">
 
 Website: shopwhole.tech or 192.81.211.69:80
 
@@ -13,11 +14,12 @@ A test of the algorithm is available in Backend and would be actually implemente
 The Math
 ![picture](https://github.com/adouglas24/ShopWhole/blob/master/boga-project/static/visualization.gif)
 
-
-
 After multiple iterations, we observe that the regression line approaches the true relationship between purchase quantity and price point.
+
+
 Our algorithm analyzes student consumption patterns and how the price level relates to the number of purchases made by ShopWhole users. With each order placed, our algorithm updates itself to more accurately represent student purchasing patterns.
 
+![picture](https://github.com/adouglas24/ShopWhole/blob/master/boga-project/static/profitoptimization.png)
 
 
 Once we are able to accurately predict consumer behavior, we calculate the optimal listing price for the product and the profit for the entire bulk order. As the listing price is repeatedly optimized with increased understanding of student purchasing habits, our profits show a clear, increasing trend.
