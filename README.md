@@ -12,8 +12,9 @@ ShopWhole is a digital marketplace that gives individual students the ability to
 ShopWhole relies on a bulk order partnership with manufacturers, along with having a central delivery location at participating schools. 
 A test of the algorithm is available in Backend and would be actually implemented once products are ready to be sold. We developed the ShopWhole website with Django, using a MySQL database and Bootstrap for styling. The website is currently hosted at www.shopwhole.tech. If this doesn't work, please try visiting 192.81.211.69:80.
 
+<hr>
 
-The Math
+<h1>The Math</h1>
 <p align="center">
 <img align="center" src="https://github.com/adouglas24/ShopWhole/blob/master/boga-project/static/visualization.gif">
 </p>
@@ -28,8 +29,9 @@ Our algorithm analyzes student consumption patterns and how the price level rela
 </p>
 
 Once we are able to accurately predict consumer behavior, we calculate the optimal listing price for the product and the profit for the entire bulk order. As the listing price is repeatedly optimized with increased understanding of student purchasing habits, our profits show a clear, increasing trend.
+<hr>
 
-The Business Model
+<h1>The Business Model</h1>
 ShopWhole is able to make profit through the increasing the accuracy of our predictions. We will sell at prices just above our estimated wholesale price. This price will continue to decrease as the number of students ordering goods increases. In short, the more users we have, the more accurate our predictions become, and the more we can profit the customer, the wholesaler, and ShopWhole.
 
 
