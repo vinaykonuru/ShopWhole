@@ -1,5 +1,5 @@
 # Vandy Hacks Summer Edition 7/10/20-7/12/20: ShopWhole
-
+# Winners: Best Beginner Hackers
 <img align="left" width="150" height="150" src="https://github.com/adouglas24/ShopWhole/blob/master/boga-project/static/shopwhole-transparent.png"> 
 
 
