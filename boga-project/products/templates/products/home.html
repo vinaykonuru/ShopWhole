@@ -16,7 +16,7 @@
       {% for product in products.all %}
         {% if forloop.counter0|divisibleby:3 %}
           </div><br> <div class="row">
-      {% endif %}
+        {% endif %}
         <div class="col-4">
           <div onclick="window.location='{% url 'detail' product.id %}';" style="cursor:pointer">
           <div class="card text-white mb-3" style="width:18rem; background-color: #f8709b">
